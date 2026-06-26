@@ -5,8 +5,8 @@ import pandas as pd
 import streamlit as st
 import plotly_express as px
 import plotly.graph_objects as go
-from streamlit_option_menu import option_menu
-from pathlib import path
+from streamlit_option_menu import streamlit_option_menu
+from pathlib import Path  
 import warnings
 import sys 
 sys.modules['warnings'] = warnings
