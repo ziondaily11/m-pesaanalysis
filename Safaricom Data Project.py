@@ -166,13 +166,16 @@ def show_home():
     """, unsafe_allow_html=True)
     
    
-    lef, mid_lef, mid, mid_righ = st.columns(4)
+    lef, mid_lef, mid, mid_righ, rig = st.columns(5)
     with lef:
         st.metric(label= "Total Transactions", value= f"{total_transactions:,}")
     with mid_lef:
-        st.metric(label= "Total Volume (KES)", value= format_number(total_volume))
+        st.metric(label= "Total Volume", value= f"KES {format_number(total_volume)}")
     with mid:
         st.metric(label= "fraud rate", value= (f"{fraud_rate}%") )
     with mid_righ:
-        st.metric(label= "AVG. legit amount", value= (f"KES{round(legit_avg)}"))
+        st.metric(label= "AVG. legit amount", value= (f"KES {round(legit_avg)}"))
+    with rig:
+        st.metric(label= "AVg. fraud amount", value= (f"KES {round(fraud_avg)}"))
+    
 show_home()
