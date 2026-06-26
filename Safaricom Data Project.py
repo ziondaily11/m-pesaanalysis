@@ -169,4 +169,6 @@ def show_home():
         st.metric(label= "Total Transactions (KES)", value= f"{total_transactions:,}")
     with mid_lef:
         st.metric(label= "Total Volume", value= format_number(total_volume))
+    with mid:
+        st.metric(label= "fraud rate", value= (f"{fraud_rate}%") )
 show_home()
