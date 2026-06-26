@@ -107,7 +107,7 @@ def show_home():
       st.image(Path(__file__).parent / "SAF-MAIN-LOGO.png")
     with col2:
         st.markdown("""
-                <h1 style="color: #ff4500; font-family: Courier New, monospace; 
+                <h1 style="color: #288C1D; font-family: Courier New, monospace; 
                         font-size:30px">
                     M-pesa Analysis
                 </h1>
