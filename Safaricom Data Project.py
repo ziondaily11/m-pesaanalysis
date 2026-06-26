@@ -11,7 +11,7 @@ import warnings
 import sys 
 sys.modules['warnings'] = warnings
 st.set_page_config(
-    page_title= "m-pesa Analysis"
+    page_title= "m-pesa Analysis",
     page_icon= ":bar_char:"
 )
 @st.cache_data
