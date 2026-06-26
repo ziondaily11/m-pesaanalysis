@@ -44,7 +44,8 @@ def calc(saf_data):
         )
         #fraud & Legit amountrs
         fraud_amt= saf_data[saf_data["is_fraud"]==1]["amount"].sum()
-        legit_amt= round(total_volume- fraud_amt)
+        legit_amt= (total_volume- fraud_amt)
+        legit_amt= round(legit_amt, 0)
         #Averages
         fraud_avg= saf_data[saf_data["is_fraud"]==1]["amount"].mean()
         legit_avg= saf_data[saf_data["is_fraud"]==0]["amount"].mean()
