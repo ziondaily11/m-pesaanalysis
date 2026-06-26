@@ -110,7 +110,7 @@ def calc(saf_data):
             amount_dist
         )
 def show_home():
-    col1, col2 = st.columns([1, 10], vertical_alignment= "center")
+    col1, col2 = st.columns([2, 8], vertical_alignment= "center")
     with col1:
         st.image(Path(__file__).parent /"SAF-MAIN-LOGO.png")
     with col2:
