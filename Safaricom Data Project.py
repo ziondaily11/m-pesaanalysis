@@ -6,11 +6,12 @@ import streamlit as st
 import plotly_express as px
 import plotly.graph_objects as go
 from streamlit_option_menu import option_menu
+from pathlib import path
 import warnings
 import sys 
 sys.modules['warnings'] = warnings
 
-saf_data= pd.read_csv(r"C:\Users\HomePC\Downloads\saf data\mpesa_synthetic.csv")
+saf_data= pd.read_csv(Path(__file__).parent / "mpesa_synthetic.csv")
 saf_data= saf_data.dropna(subset= "transaction_id")
 #calculations
 #total transactions
@@ -69,4 +70,4 @@ feature_pct= round(feature_count*100/total, 2)
 device_per_region= (
     saf_data.groupby(["region", "device_type"]).size()
 )          
-st.image(r"C:\Users\HomePC\Downloads\SAF-MAIN-LOGO.png")
+st.image(Path(__file__).parent / "SAF-MAIN-LOGO.png")
