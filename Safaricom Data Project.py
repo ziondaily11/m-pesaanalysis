@@ -9,27 +9,13 @@ from streamlit_option_menu import option_menu
 from pathlib import Path  
 import warnings
 import sys 
-import base64
+
+
 sys.modules['warnings'] = warnings
 
 
-def get_image_base64(path):
-    with open(path, "rb") as f:
-        return base64.b64encode(f.read()).decode()
 
-logo = get_image_base64("SAF-MAIN-LOGO.png")  
-st.markdown(f"""
-    <div style="display:flex; align-items:center; gap:10px; margin-bottom:1rem;">
-        <div style="display:flex; align-items:center;">
-            <img src="data:image/png;base64,{logo}" 
-                 style="width:220px; height:auto; object-fit:contain;">
-        </div>
-        <div style="display:flex; align-items:center;">
-            <span style="color:#288C1D; font-family:'Courier New', monospace; 
-                       font-size:38px; margin:0; line-height:1;">M-Pesa Analysis</span>
-        </div>
-    </div>
-""", unsafe_allow_html=True)
+
 st.set_page_config(
     page_title= "m-pesa Analysis",
     page_icon= ":bar_chart:",
