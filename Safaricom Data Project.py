@@ -102,6 +102,9 @@ def calc(saf_data):
             amount_dist
         )
 def show_home():
+    col1, col2= st.columns([1, 10])
+    with col1:
+      st.image(Path(__file__).parent / "SAF-MAIN-LOGO.png")
     saf_data= data_store()
     (
             total_transactions,
@@ -133,8 +136,6 @@ def show_home():
         elif num >= 1_000:
             return f"${num/1_000:.1f}K"
         return str(num)
-    col1, col2= st.columns([1, 10])
-    with col1:
-      st.image(Path(__file__).parent / "SAF-MAIN-LOGO.png")
+   
 
 show_home()
