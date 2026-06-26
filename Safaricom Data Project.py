@@ -124,6 +124,36 @@ def calc(saf_data):
             amount_dist
         )
 def show_home():
+    col1, col2 = st.columns([1, 10], vertical_alignment= "center")
+    with col1:
+        st.image(Path(__file__).parent /"SAF-MAIN-LOGO.png")
+    with col2:
+        st.markdown("""
+                <h1 style="color: #288C1D; font-family: Courier New, monospace; 
+                        font-size:30px">
+                    M-Pesa Analysis
+                </h1>
+            """, unsafe_allow_html=True)
+    st.markdown("""
+        <style>
+            [data-testid="stMetric"] {
+                background-color: #0E0D0B;
+                border: 1px solid #333;
+                border-radius: 10px;
+                padding: 20px;
+            }
+            [data-testid="stMetricLabel"] {
+                color: #F4F2F1;
+                font-size: 16px;
+            }
+            [data-testid="stMetricValue"] {
+                color: #F4F2F1;
+                font-size: 28px;
+            }
+        </style>
+    """, unsafe_allow_html=True)
+    
+    
     saf_data= data_store()
     (
             total_transactions,
