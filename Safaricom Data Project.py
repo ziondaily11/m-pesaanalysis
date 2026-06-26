@@ -22,7 +22,7 @@ st.markdown(f"""
     <div style="display:flex; align-items:center; gap:10px; margin-bottom:1rem;">
         <img src="data:image/png;base64,{logo}" width="220">
         <h2 style="color:#288C1D; font-family:'Courier New', monospace; 
-                   font-size:35px; margin:0;">M-Pesa Analysis</h2>
+                   font-size:38px; margin:0;">M-Pesa Analysis</h2>
     </div>
 """, unsafe_allow_html=True)
 st.set_page_config(
