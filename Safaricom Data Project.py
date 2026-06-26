@@ -166,5 +166,5 @@ def show_home():
    
     lef, mid_lef, mid, righ= st.columns(4)
     with lef:
-        st.metric(label= "Total Transactions", value= total_transactions)
+        st.metric(label= "Total Transactions", value= format_number(total_transactions))
 show_home()
