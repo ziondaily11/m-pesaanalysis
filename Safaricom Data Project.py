@@ -216,5 +216,5 @@ def show_home():
     with rig:
        st.metric(label= "Avg. Fraud Amount", value= (f"KES {round(fraud_avg):,}"))
     with col:
-        st.metric(label= "Peak Fraud Hour", value= f"{peak_hour-12}PM")
+        st.metric(label= "Peak Fraud Hour", value= f"{peak_hour-12} PM")
 show_home()
