@@ -256,11 +256,11 @@ def show_home():
     )
     fraud_rate_bar.update_layout(
         yaxis= dict(
-            title= None
+            title= None,
             showgrid= False
         ),
         xaxis= dict(
-            title= None
+            title= None,
             showgrid= False
         )
     )
