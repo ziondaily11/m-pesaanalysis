@@ -211,7 +211,7 @@ def show_home():
         st.metric(label= "Total Volume", value= f"KES {format_number(total_volume)}")
     with mid:
         st.metric(label="Fraud Rate", value=f"{fraud_rate}%",
-        delta= f"({fraud_count})flagged transaction")
+        delta= f"({fraud_count})flagged txns")
     with mid_righ:
         st.markdown("""
         <style>
