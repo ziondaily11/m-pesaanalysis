@@ -218,7 +218,8 @@ def show_home():
         st.metric(label= "Total Volume", value= f"KES {format_number(total_volume)}")
     with mid:
         st.metric(label="Fraud Rate", value=f"{fraud_rate}%",
-        delta= f"{fraud_count} flagged txns")
+        delta= f"{fraud_count} flagged txns",
+        delta_color= "inverse")
     with mid_righ:
         st.metric(label= "Avg. legitimate Amount",
         value= (f"KES {round(legit_avg):,}"),
