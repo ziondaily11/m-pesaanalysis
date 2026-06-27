@@ -264,7 +264,7 @@ def show_home():
             showgrid= False
         )
     )
-    with col, col1= st.columns(2)
+    col, col1= st.columns(2)
     with col:
         with st.container(border= True):
             st.plotly_chart(fraud_rate_bar)
