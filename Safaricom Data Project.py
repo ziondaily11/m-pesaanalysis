@@ -216,7 +216,7 @@ def show_home():
                     Fraud Rate
                 </h1>
             """, unsafe_allow_html=True)
-            st.metric(label= "", value= (f"{fraud_rate}%") )
+        st.metric(label= "", value= (f"{fraud_rate}%") )
     with mid_righ:
         st.metric(label= "Avg. legitimate Amount", value= (f"KES {round(legit_avg):,}"))
     with rig:
