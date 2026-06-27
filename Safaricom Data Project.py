@@ -257,6 +257,7 @@ def show_home():
     )
     fraud_rate_bar.update_layout(
         yaxis= dict(
+            ticksuffix= "%",
             title= None,
             showgrid= False
         ),
