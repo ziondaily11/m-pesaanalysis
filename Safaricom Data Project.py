@@ -214,7 +214,7 @@ def show_home():
     with mid_righ:
         st.metric(label= "Avg. legitimate Amount",
         value= (f"KES {round(legit_avg):,}"),
-        delta= "per transaction"
+        delta= "per transaction",
         delta_color= off)
     with rig:
        st.metric(label= "Avg. Fraud Amount", value= (f"KES {round(fraud_avg):,}"))
