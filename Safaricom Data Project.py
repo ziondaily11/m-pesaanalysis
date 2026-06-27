@@ -215,6 +215,7 @@ def show_home():
         st.metric(label= "Avg. legitimate Amount", value= (f"KES {round(legit_avg):,}"))
     with rig:
        st.metric(label= "Avg. Fraud Amount", value= (f"KES {round(fraud_avg):,}"))
+    st.markdown("__")
     col, col1= st.columns(2)
     with col:
         st.metric(label= "Peak Fraud Hour", value= (peak_hour))
