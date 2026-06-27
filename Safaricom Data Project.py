@@ -210,7 +210,7 @@ def show_home():
     with mid_lef:
         st.metric(label= "Total Volume", value= f"KES {format_number(total_volume)}")
     with mid:
-         st.markdown("""
+        st.markdown("""
                 <h1 style="color: #EC1322; font-family: Courier New, monospace; 
                         font-size:10px">
                     Fraud Rate
