@@ -247,7 +247,7 @@ def show_home():
         )
     #GRAPHS
     #fraude rate per amount
-    with col, col1= st.columns(3)
+    
     fraud_rate_bar= px.bar(
          fraud_rate_per_amount,
         x= fraud_rate_per_amount.index,
