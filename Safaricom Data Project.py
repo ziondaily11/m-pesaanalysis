@@ -225,7 +225,13 @@ def show_home():
         value= (f"KES {round(legit_avg):,}"),
         delta= "per transaction")
     with rig:
-       st.metric(label= "Avg. Fraud Amount", value= (f"KES {round(fraud_avg):,}"))
+       st.metric(label= "Avg. Fraud Amount", 
+       value= (f"KES {round(fraud_avg):,}"),
+       delta= "per transaction",
+        delta_color= "inverse"
+       )
     with col:
-        st.metric(label= "Peak Fraud Hour", value= f"{peak_hour-12} PM")
+        st.metric(label= "Peak Fraud Hour",
+         value= f"{peak_hour-12} PM",
+         delta= f"Hour{peak_hour}-{peak_hour_counts} cases")
 show_home()
