@@ -233,5 +233,6 @@ def show_home():
     with col:
         st.metric(label= "Peak Fraud Hour",
          value= f"{peak_hour-12} PM",
-         delta= f"Hour{peak_hour}-{peak_hour_counts} cases")
+         delta= f"Hour{peak_hour}-{peak_hour_counts} cases",
+         delta_color= "inverse")
 show_home()
