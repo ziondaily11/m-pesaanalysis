@@ -248,20 +248,16 @@ def show_home():
     st.markdown("-")
     #GRAPHS
     #fraude rate per amount
-    color_map={
-       "cat1": "#1D9E75",
-       "cat2": "#BA7517",
-       "cat3": "#D85A30",
-       "cat4": "#E24B4A",      
-       "cat5": "#791F1F"}
+    
     fraud_rate_bar= px.bar(
          fraud_rate_per_amount,
         x= fraud_rate_per_amount.index,
         y= fraud_rate_per_amount.values,
         title= "<b>Fraud rate by transaction amount</b>",
         color= "category",
-        color_discrete_sequence= color_map
-    )
+        color_discrete_sequence=["#1D9E75", "#BA7517", "#D85A30", "#E24B4A", "#791F1F"]
+)
+    
 
     fraud_rate_bar.update_layout(
         height= 300,
