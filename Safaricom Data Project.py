@@ -213,9 +213,13 @@ def show_home():
         </style>
         """, unsafe_allow_html=True)
     with lef:
-        st.metric(label= "Total Transactions", value= f"{total_transactions:,}")
+        st.metric(label= "Total Transactions", 
+        value= f"{total_transactions:,}",
+        delta= "full 2026 dataset")
     with mid_lef:
-        st.metric(label= "Total Volume", value= f"KES {format_number(total_volume)}")
+        st.metric(label= "Total Volume", 
+        value= f"KES {format_number(total_volume)}",
+        delta= "Across all types")
     with mid:
         st.metric(label="Fraud Rate", value=f"{fraud_rate}%",
         delta= f"{fraud_count} flagged txns",
