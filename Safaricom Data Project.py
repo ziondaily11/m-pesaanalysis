@@ -215,11 +215,13 @@ def show_home():
     with lef:
         st.metric(label= "Total Transactions", 
         value= f"{total_transactions:,}",
-        delta= "full 2026 dataset")
+        delta= "full 2026 dataset",
+        delta_color= "off")
     with mid_lef:
         st.metric(label= "Total Volume", 
         value= f"KES {format_number(total_volume)}",
-        delta= "Across all types")
+        delta= "Across all types",
+        delta_color= "off")
     with mid:
         st.metric(label="Fraud Rate", value=f"{fraud_rate}%",
         delta= f"{fraud_count} flagged txns",
