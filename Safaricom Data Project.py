@@ -270,8 +270,7 @@ def show_home():
         margin= dict(t= 40, b= 10, l= 10, r= 10),
         yaxis= dict(
             ticksuffix= "%",
-            title= None,
-            showgrid= False
+            title= None
         ),
         xaxis= dict(
             title= None,
