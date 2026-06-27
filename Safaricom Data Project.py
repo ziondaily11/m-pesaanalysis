@@ -251,7 +251,7 @@ def show_home():
     fraud_rate_bar= px.bar(
          fraud_rate_per_amount,
         x= fraud_rate_per_amount.index,
-        y= fraud_rate_per_amount.values
+        y= fraud_rate_per_amount.values,
         title= "<b>Fraud rate by transaction amount</b>"
     )
     st.plotly_chart(fraud_rate_bar)
