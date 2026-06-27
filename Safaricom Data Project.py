@@ -248,12 +248,12 @@ def show_home():
     #GRAPHS
     #fraude rate per amount
 
-    '''fraud_rate_bar= px.bar(
+    fraud_rate_bar= px.bar(
          fraud_rate_per_amount,
-        x= fraud_rate_per_amount.sort_index,
+        x= fraud_rate_per_amount.index,
         y= fraud_rate_per_amount.values
     )
-    st.plotly_chart(fraud_rate_bar)'''
+    st.plotly_chart(fraud_rate_bar)
     st.dataframe( fraud_rate_per_amount)
 
 show_home()
