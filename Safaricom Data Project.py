@@ -259,9 +259,8 @@ def show_home():
         x= fraud_rate_per_amount.index,
         y= fraud_rate_per_amount.values,
         title= "<b>Fraud rate by transaction amount</b>",
-        color= "category",
-        color_discrete_map= color_map
-    )
+        color_discrete_sequence=["#1D9E75", "#BA7517", "#D85A30", "#E24B4A", "#791F1F"]
+)
 
     fraud_rate_bar.update_layout(
         height= 300,
