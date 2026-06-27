@@ -203,19 +203,23 @@ def show_home():
         </style>
     """, unsafe_allow_html=True)
     
-    text= st.markdown("""
-                <h1 style="color: #EC1322; font-family: Courier New, monospace; 
-                        font-size:10px">
-                    Fraud Rate
-                </h1>
-            """, unsafe_allow_html=True)
+    
     lef, mid_lef, mid, mid_righ, rig = st.columns(5)
     with lef:
         st.metric(label= "Total Transactions", value= f"{total_transactions:,}")
     with mid_lef:
         st.metric(label= "Total Volume", value= f"KES {format_number(total_volume)}")
     with mid:
-        st.metric(label= st.write(text), value= (f"{fraud_rate}%"))
+    st.markdown("""
+        <style>
+        [data-testid="stMetricLabel"] p {
+            color: #EC1322 !important;
+            font-family: Courier New, monospace;
+            font-size: 10px;
+        }
+        </style>
+    """, unsafe_allow_html=True)
+    st.metric(label="Fraud Rate", value=f"{fraud_rate}%")
     with mid_righ:
         st.metric(label= "Avg. legitimate Amount", value= (f"KES {round(legit_avg):,}"))
     with rig:
