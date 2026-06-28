@@ -314,8 +314,7 @@ def show_home():
         hole= 0.7,
         textinfo= "label",
         textposition= "outside",
-        #color=  transaction_split.index,
-        color_discrete_sequence=["#1D9E75", "#BA7517", "#D85A30"]
+        marker_colors=["#1D9E75", "#BA7517", "#D85A30"]
     ))
     col, col1= st.columns(2)
     column1, column2= st.columns(2)
