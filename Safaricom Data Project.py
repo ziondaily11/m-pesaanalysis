@@ -313,7 +313,9 @@ def show_home():
         values= transaction_split.values,
         hole= 0.7,
         textinfo= "label",
-        textposition= "outside"
+        textposition= "outside",
+        color=  transaction_split.index,
+        color_discrete_sequence=["#1D9E75", "#BA7517", "#D85A30"]
     ))
     col, col1= st.columns(2)
     column1, column2= st.columns(2)
@@ -326,5 +328,6 @@ def show_home():
         with st.container(border= True):
             st.plotly_chart(fraud_region)
     with column1:
-        st.plotly_chart(transaction_split_pie)
+        with st.container(border= True):
+            st.plotly_chart(transaction_split_pie)
 show_home()
