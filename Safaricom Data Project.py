@@ -62,6 +62,10 @@ def calc(saf_data):
             .size()
             .sort_values(ascending= False)
         )
+        fraud_rate_region= (
+            fraud_rate["region"].reset_index()
+        )
+
         #peak fraud hour
         peak_hour= fraud_hourly_counts.idxmax()
         peak_hour_counts= fraud_hourly_counts.max()
@@ -107,7 +111,8 @@ def calc(saf_data):
             legit_avg,
             peak_hour,
             peak_hour_counts,
-            amount_dist
+            amount_dist,
+            fraud_rate_region
         )
 def show_home():
     st.markdown("""
@@ -164,7 +169,8 @@ def show_home():
             legit_avg,
             peak_hour,
             peak_hour_counts,
-            amount_dist
+            amount_dist,
+            fraud_rate_region
         )= calc(saf_data)
     def format_number(num):
         if num >= 1_000_000_000:
@@ -283,5 +289,7 @@ def show_home():
         with st.container(border= True):
             st.plotly_chart(fraud_rate_bar)
         
-
+    with col1:
+        with st.container(border= True):
+            st.dataframe(fraud_rate_region)
 show_home()
