@@ -287,7 +287,9 @@ def show_home():
         fraud_rate_region,
         x= "region",
         y= "is_fraud",
-        title= "<b> Fraud Rate Per Region</b>"
+        title= "<b> Fraud Rate Per Region</b>",
+        color= "region",
+        color_discrete_sequence=["#1D9E75", "#BA7517", "#D85A30", "#E24B4A", "#791F1F"]
 
     )
 
