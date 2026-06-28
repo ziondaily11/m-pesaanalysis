@@ -63,7 +63,7 @@ def calc(saf_data):
             .sort_values(ascending= False)
         )
         fraud_rate_region= (
-            fraud_rate["region"].reset_index()
+            fraud_rate["region"]
         )
 
         #peak fraud hour
