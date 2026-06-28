@@ -320,15 +320,12 @@ def show_home():
     with col:
         with st.container(border= True):
             st.plotly_chart(fraud_rate_bar)
-        
+        with st.container(border= True):
+            st.plotly_chart(transaction_split_pie)
     with col1:
         with st.container(border= True):
             st.plotly_chart(fraud_region)
     
     column1, column2= st.columns(2)
 
-    
-    with column1:
-        with st.container(border= True):
-            st.plotly_chart(transaction_split_pie)
 show_home()
