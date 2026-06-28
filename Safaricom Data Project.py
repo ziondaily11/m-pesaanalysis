@@ -306,7 +306,17 @@ def show_home():
             title= None
         ),
     )
+    #transaction split pie
+
+    transaction_split_pie= go.Figure(go.pie(
+        labels= transaction_split.index,
+        values= transaction_split.values,
+        hole= 0.7,
+        textinfo= "label"
+        textposition= "outside"
+    ))
     col, col1= st.columns(2)
+    column1, column2= st.columns(3)
 
     with col:
         with st.container(border= True):
@@ -315,4 +325,6 @@ def show_home():
     with col1:
         with st.container(border= True):
             st.plotly_chart(fraud_region)
+    with column1:
+        st.plotly_chart(transaction_split_pie)
 show_home()
