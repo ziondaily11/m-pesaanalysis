@@ -294,6 +294,8 @@ def show_home():
     )
 
     fraud_region.update_layout(
+        height= 300,
+        showlegend= False,
         margin= dict(t= 40, b= 10, l= 10, r= 10),
         xaxis= dict(
             showgrid= False,
