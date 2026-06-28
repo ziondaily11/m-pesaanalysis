@@ -326,6 +326,7 @@ def show_home():
     with col1:
         with st.container(border= True):
             st.plotly_chart(fraud_region)
+    st.markdown("#")
     with column1:
         with st.container(border= True):
             st.plotly_chart(transaction_split_pie)
