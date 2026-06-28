@@ -123,16 +123,6 @@ def show_home():
         }
     </style>
 """, unsafe_allow_html=True) 
-    col1, col2 = st.columns([2, 8], vertical_alignment= "center")
-    with col1:
-        st.image(Path(__file__).parent /"SAF-MAIN-LOGO.png")
-    with col2:
-        st.markdown("""
-                <h1 style="color: #288C1D; font-family: Courier New, monospace; 
-                        font-size:30px">
-                    M-Pesa Analysis
-                </h1>
-            """, unsafe_allow_html=True)
     st.markdown("""
         <style>
             [data-testid="stMetric"] {
@@ -212,6 +202,16 @@ def show_home():
         }
         </style>
         """, unsafe_allow_html=True)
+    col1, col2 = st.columns([2, 8], vertical_alignment= "center")
+    with col1:
+        st.image(Path(__file__).parent /"SAF-MAIN-LOGO.png")
+    with col2:
+        st.markdown("""
+                <h1 style="color: #288C1D; font-family: Courier New, monospace; 
+                        font-size:30px">
+                    M-Pesa Analysis
+                </h1>
+            """, unsafe_allow_html=True)
     with lef:
         st.metric(label= "Total Transactions", 
         value= f"{total_transactions:,}",
