@@ -437,7 +437,7 @@ def show_home():
     fig.update_yaxes(
         title= "Transaction AMT",
         range= [4700, 5200],
-        tickformat= "~s"
+        tickformat= "~s",
         secondary_y= False
     )
     fig.update_yaxes(
