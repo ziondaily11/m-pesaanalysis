@@ -406,6 +406,7 @@ def show_home():
     with col1:
         with st.container(border= True):
             st.plotly_chart(fraud_region)
+            st.caption("Note: y-axis starts at 2.7% to highlight regional differences")
             st.plotly_chart(amount_dist_bar)
     
     
