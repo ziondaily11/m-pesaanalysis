@@ -330,15 +330,9 @@ def show_home():
                 x= 0,
                 y= 0.97
                 ),
-        legend= dict(
-            orientation= "h",
-            yanchor= "top",
-            y= 0.85,
-            xanchor= "center",
-            x= 0.5
-        ),
+        
         height= 230,
-         margin=dict(t=100, b=20, l=20, r=20),
+        margin= dict(t= 40, b= 10, l= 10, r= 10),
         
     )
     col, col1= st.columns(2)
