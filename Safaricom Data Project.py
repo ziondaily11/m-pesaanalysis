@@ -5,6 +5,7 @@ import pandas as pd
 import streamlit as st
 import plotly_express as px
 import plotly.graph_objects as go
+from plotly.subplots import make_subplots AS msp
 from streamlit_option_menu import option_menu
 from pathlib import Path  
 import warnings
@@ -69,6 +70,8 @@ def calc(saf_data):
         #peak fraud hour
         peak_hour= fraud_hourly_counts.idxmax()
         peak_hour_counts= fraud_hourly_counts.max()
+        fraud_rate_hour= (saf_data.groupby(by= ["hour"])["is_fraud"].mean().reset_index())
+        fraud_rate_hour["is_fraud"]= round(fraud_rate_hour["is_fraud"]*100, 2)
         #Transaction type splitt
         transaction_split= (saf_data.groupby(by= "transaction_type")[["transaction_id"]]
                             .size()
@@ -112,7 +115,8 @@ def calc(saf_data):
             peak_hour,
             peak_hour_counts,
             amount_dist,
-            fraud_rate_region
+            fraud_rate_region,
+            fraud_rate_hour
         )
 def show_home():
     st.markdown("""
@@ -170,7 +174,8 @@ def show_home():
             peak_hour,
             peak_hour_counts,
             amount_dist,
-            fraud_rate_region
+            fraud_rate_region,
+            fraud_rate_hour
         )= calc(saf_data)
     def format_number(num):
         if num >= 1_000_000_000:
@@ -397,7 +402,55 @@ def show_home():
         )
     )
 
-    #transaction by hour
+    #fraude rate per hour + transaction amount per hour
+
+    fig.msp(specs= [[{"secondary_": True}]])
+    fig.add_traces(
+        go.scatter(
+            tran_per_hour,
+            x= tran_per_hour.index,
+            y= tran_per_hour.values,
+            name= "Transactions",
+            mode= "line",
+            fill= "tozeroy",
+            line= dict(
+                shape= "spline",
+                width= 3,
+                color= "#18c29c",
+                marker= dict(size= 7)
+                hovertemplate= "<b>Hour %{x}:00</b><br>Transactions: %{y}<extra></extra>"
+        ),
+        secondary_y= False
+    )
+    )
+    fig.update_layout(
+        title= "Transactions CVS Fraude Rate by Hour",
+        template= "plotly_dark",
+        hovermode= "x unified",
+
+        legend= dict(
+            orientation= "h",
+            y= 1.08, x= 0.5, 
+            xachor= "center"
+        ),
+        margin=  dict(t= 40, b= 10, l= 10, r= 10),
+        height= 300
+    )
+    fig.update_yaxes(
+        title= "Transaction AMT",
+        range= [4700, 5200],
+        secondary_y= False
+    )
+    fig.update_yaxes(
+        title= "Fraud Rate",
+        secondary_y= True
+    )
+    fig.update_xaxes(
+        ticksuffix= "h",
+        tickmode= "linear",
+        dtick= 1
+    )
+
     col, col1= st.columns(2)
     with col:
         with st.container(border= True):
@@ -411,6 +464,6 @@ def show_home():
     
     
     with st.container(border= True):
-        st.plotly_chart(hourly_tran_bar)
+        st.plotly_chart(fig)
 
 show_home()
