@@ -336,7 +336,7 @@ def show_home():
             text= "Transaction Type Split",
             x= 0.5, y= 0.5,
             font_size= 14,
-            showarrow= Fale
+            showarrow= False
 
         )]
         
