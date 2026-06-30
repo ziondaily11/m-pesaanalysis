@@ -325,6 +325,13 @@ def show_home():
         domain= dict(x=[0.1, 0.9], y=[0.1, 0.9])
         )
     transaction_split_pie.update_layout(
+        legend= dict(
+            orientation= "h",
+            yanchor= "bottom",
+            y= 1.02,
+            xanchor= "center",
+            x= 0.5
+        )
         height= 200,
         margin= dict(t= 40, b= 10, l= 10, r= 10),
         
