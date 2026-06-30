@@ -215,12 +215,12 @@ def show_home():
     col1, col2 = st.columns([2, 8], vertical_alignment= "center")
     lef, mid_lef, mid, mid_righ, rig, col = st.columns(6)
     with col1:
-        st.image(Path(__file__).parent /"SAF-MAIN-LOGO.png")
+        st.image(Path(__file__).parent /"momo_logo_icon_small.png")
     with col2:
         st.markdown("""
                 <h1 style="color: #288C1D; font-family: Courier New, monospace; 
                         font-size:30px">
-                    M-Pesa Analysis
+                    FINPULSE
                 </h1>
             """, unsafe_allow_html=True)
     with lef:
