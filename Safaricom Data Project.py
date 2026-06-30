@@ -351,6 +351,19 @@ def show_home():
         color_discrete_sequence=["#1D9E75", "#BA7517", "#D85A30", "#E24B4A", "#791F1F"]
 
     )
+    amount_dist_bar.update_layout(
+        height= 230,
+        margin= dict(t= 40, b= 10, l= 10, r= 10),
+        title_font_color= "#618948",
+        showlegend= False,
+        yaxis= dict(
+            title= None
+        ),
+        xaxis= dict(
+            title= None,
+            showgrid= False
+        )
+    )
     col, col1= st.columns(2)
     with col:
         with st.container(border= True):
