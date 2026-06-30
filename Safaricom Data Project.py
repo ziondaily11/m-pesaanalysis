@@ -295,7 +295,7 @@ def show_home():
 
     fraud_region.update_layout(
         title_font_color= "#F4170B",
-        height= 300,
+        height= 290,
         showlegend= False,
         margin= dict(t= 40, b= 10, l= 10, r= 10),
         xaxis= dict(
