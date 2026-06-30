@@ -342,6 +342,13 @@ def show_home():
         
     )
     #amount distribution graph
+    hourly_tran_bar= px.area(
+        tran_per_hour,
+        x= tran_per_hour.index,
+        y= tran_per_hour.values,
+        title= "Transaction by Hour of the Day",
+        markers= True
+    )
     amount_dist_bar= px.bar(
         amount_dist,
         x= amount_dist.index,
@@ -364,6 +371,7 @@ def show_home():
             showgrid= False
         )
     )
+    #transaction by hour
     col, col1= st.columns(2)
     with col:
         with st.container(border= True):
@@ -375,6 +383,9 @@ def show_home():
             st.plotly_chart(fraud_region)
             st.plotly_chart(amount_dist_bar)
     
-    column1, column2= st.columns(2)
+    column1=st.columns(1)
+    with column1:
+        with st.container(border= True):
+            st.plotly_chart(hourly_tran_bar)
 
 show_home()
