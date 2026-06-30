@@ -457,7 +457,7 @@ def show_home():
     )
     fig.update_yaxes(
         title= "Fraud Rate",
-        ticksuffix= "%"
+        ticksuffix= "%",
         secondary_y= True
     )
     fig.update_xaxes(
