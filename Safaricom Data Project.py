@@ -317,7 +317,6 @@ def show_home():
         values= transaction_split.values,
         hole= 0.7,
         textinfo = "none",
-        title= "<b>Transaction Type Split</b>",
         marker_colors=["#1D9E75", "#BA7517", "#D85A30"]
     ))
     transaction_split_pie.update_traces(
@@ -333,6 +332,13 @@ def show_home():
         
         height= 230,
         margin= dict(t= 40, b= 10, l= 10, r= 10),
+        annotations= [dict(
+            text= "Transaction Type Split",
+            x= 0.5, y= 0.5,
+            font_size= 14,
+            showarrow= Fale
+
+        )]
         
     )
     col, col1= st.columns(2)
