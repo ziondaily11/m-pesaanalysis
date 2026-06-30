@@ -320,7 +320,7 @@ def show_home():
     ))
     transaction_split_pie.update_traces(
         outsidetextfont= dict(size= 12),
-        domain= dict(x=[0.2, 0.7], y=[0.2, 0.7])
+        domain= dict(x=[0.1, 0.9], y=[0.1, 0.9])
         )
     transaction_split_pie.update_layout(
         height= 200,
