@@ -362,7 +362,8 @@ def show_home():
         xaxis= dict(
             showgrid= False,
             title= None,
-            range= [-0.5, 23.5]
+            range= [-0.5, 23.5],
+            ticksuffix= "h"
         ),
         yaxis= dict(
             range= [4700, 5200],
