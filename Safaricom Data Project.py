@@ -383,9 +383,8 @@ def show_home():
             st.plotly_chart(fraud_region)
             st.plotly_chart(amount_dist_bar)
     
-    column1=st.columns(1)
-    with column1:
-        with st.container(border= True):
-            st.plotly_chart(hourly_tran_bar)
+    
+    with st.container(border= True):
+        st.plotly_chart(hourly_tran_bar)
 
 show_home()
