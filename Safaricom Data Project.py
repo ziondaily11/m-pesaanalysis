@@ -308,9 +308,12 @@ def show_home():
         ),
     )
     #transaction split pie
-
+    label_with_count= [
+        f"{label},({value:,})"
+        for label, value in zip(transaction_split.index, transaction_split.values)
+    ]
     transaction_split_pie= go.Figure(go.Pie(
-        labels= transaction_split.index,
+        labels= label_with_count,
         values= transaction_split.values,
         hole= 0.7,
         title= "<b>Transaction Type Split</b>",
@@ -325,7 +328,7 @@ def show_home():
     transaction_split_pie.update_layout(
         height= 200,
         margin= dict(t= 40, b= 10, l= 10, r= 10),
-        showlegend= False
+        
     )
     col, col1= st.columns(2)
     with col:
