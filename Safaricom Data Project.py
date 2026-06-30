@@ -419,8 +419,23 @@ def show_home():
             marker=dict(size=7),
             hovertemplate="<b>Hour %{x}:00</b><br>Transactions: %{y}<extra></extra>"
         )
-
+    
     fig.add_trace(trace, secondary_y=False)
+    fraud_trace = go.Scatter(
+            x=fraud_rate_hour.index,
+            y=fraud_rate_hour.values,
+            name="Fraud Rate",
+            mode="lines",
+            line=dict(
+                shape="spline",
+                width=3,
+                color="#E24B4A",
+                dash="dot"
+            ),
+            hovertemplate="<b>Hour %{x}:00</b><br>Fraud Rate: %{y:.2f}%<extra></extra>"
+        )
+
+    fig.add_trace(fraud_trace, secondary_y=True)
     fig.update_layout(
         title= "Transactions VS Fraude Rate by Hour",
         template= "plotly_dark",
