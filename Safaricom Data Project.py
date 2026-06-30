@@ -332,7 +332,7 @@ def show_home():
             xanchor= "center",
             x= 0.5
         ),
-        height= 200,
+        height= 230,
         margin= dict(t= 40, b= 10, l= 10, r= 10),
         
     )
