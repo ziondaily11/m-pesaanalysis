@@ -349,6 +349,12 @@ def show_home():
         title= "Transaction by Hour of the Day",
         markers= True
     )
+    hourly_tran_bar.update_traces(
+        line= dict(
+            shape= "spline",
+            color= "#1D9E75"
+        )
+    )
     amount_dist_bar= px.bar(
         amount_dist,
         x= amount_dist.index,
@@ -371,6 +377,7 @@ def show_home():
             showgrid= False
         )
     )
+
     #transaction by hour
     col, col1= st.columns(2)
     with col:
