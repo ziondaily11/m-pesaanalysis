@@ -1,3 +1,8 @@
 streamlit
 pandas
 plotly
+openpyxl
+plotly-express
+streamlit-option-menu
+path
+pathlib
