@@ -322,6 +322,9 @@ def show_home():
         outsidetextfont= dict(size= 12),
         domain= dict(x=[0.1, 0.9], y=[0.1, 0.9])
         )
+    transaction_split_pie.update_layout(
+        margin= dict(t= 40, b= 10, l= 10, r= 10)
+    )
     col, col1= st.columns(2)
     with col:
         with st.container(border= True):
