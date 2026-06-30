@@ -309,7 +309,7 @@ def show_home():
     )
     #transaction split pie
     label_with_count= [
-        f"{label},({value:,})"
+        f"{label.upper()} ({value:,})"
         for label, value in zip(transaction_split.index, transaction_split.values)
     ]
     transaction_split_pie= go.Figure(go.Pie(
