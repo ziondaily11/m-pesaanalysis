@@ -356,7 +356,7 @@ def show_home():
         )
     )
     hourly_tran_bar.update_layout(
-        height= 200
+        height= 200,
         margin= dict(t= 40, b= 10, l= 10, r= 10),
         xaxis= dict(
             showgrid= False,
