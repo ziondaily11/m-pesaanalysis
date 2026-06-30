@@ -316,7 +316,7 @@ def show_home():
         labels= label_with_count,
         values= transaction_split.values,
         hole= 0.7,
-        textinfo = None,
+        textinfo = "none",
         title= "<b>Transaction Type Split</b>",
         marker_colors=["#1D9E75", "#BA7517", "#D85A30"]
     ))
