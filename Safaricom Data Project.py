@@ -341,6 +341,16 @@ def show_home():
         )]
         
     )
+    #amount distribution graph
+    amount_dist_bar= px.bar(
+        amount_dist,
+        x= amount_dist.index,
+        y= amount_dist.values,
+        title= "Amount Distribution",
+        color= amount_dist.index,
+        color_discrete_sequence=["#1D9E75", "#BA7517", "#D85A30", "#E24B4A", "#791F1F"]
+
+    )
     col, col1= st.columns(2)
     with col:
         with st.container(border= True):
@@ -350,6 +360,7 @@ def show_home():
     with col1:
         with st.container(border= True):
             st.plotly_chart(fraud_region)
+            st.plotly_chart(amount_dist_bar)
     
     column1, column2= st.columns(2)
 
