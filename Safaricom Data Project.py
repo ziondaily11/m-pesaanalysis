@@ -430,7 +430,7 @@ def show_home():
                 shape="spline",
                 width=3,
                 color="#E24B4A",
-                dash="dot"
+                #dash="dot"
             ),
             hovertemplate="<b>Hour %{x}:00</b><br>Fraud Rate: %{y:.2f}%<extra></extra>"
         )
