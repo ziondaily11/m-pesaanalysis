@@ -313,7 +313,7 @@ def show_home():
         labels= transaction_split.index,
         values= transaction_split.values,
         hole= 0.7,
-        title= "<b>Transaction Type Split</b>",z
+        title= "<b>Transaction Type Split</b>",
         textinfo= "label",
         textposition= "outside",
         marker_colors=["#1D9E75", "#BA7517", "#D85A30"]
