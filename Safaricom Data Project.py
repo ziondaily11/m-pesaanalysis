@@ -405,23 +405,22 @@ def show_home():
     #fraude rate per hour + transaction amount per hour
 
     fig= msp(specs= [[{"secondary_y": True}]])
-    go.Scatter(
-            tran_per_hour,
-            x= tran_per_hour.index,
-            y= tran_per_hour.values,
-            name= "Transactions",
-            mode= "line",
-            fill= "tozeroy",
-            line= dict(
-                shape= "spline",
-                width= 3,
-                color= "#18c29c",
-                marker= dict(size= 7),
-                hovertemplate= "<b>Hour %{x}:00</b><br>Transactions: %{y}<extra></extra>"
+    trace = go.Scatter(
+            x=tran_per_hour.index,
+            y=tran_per_hour.values,
+            name="Transactions",
+            mode="lines",
+            fill="tozeroy",
+            line=dict(
+                shape="spline",
+                width=3,
+                color="#18c29c"
+            ),
+            marker=dict(size=7),
+            hovertemplate="<b>Hour %{x}:00</b><br>Transactions: %{y}<extra></extra>"
         )
-    )
-    
-    fig.add_traces(traces, secondary_y= False)
+
+    fig.add_trace(trace, secondary_y=False)
     fig.update_layout(
         title= "Transactions CVS Fraude Rate by Hour",
         template= "plotly_dark",
