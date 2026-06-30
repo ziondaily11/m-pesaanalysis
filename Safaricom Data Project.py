@@ -5,7 +5,7 @@ import pandas as pd
 import streamlit as st
 import plotly_express as px
 import plotly.graph_objects as go
-from plotly.subplots import make_subplots AS msp
+from plotly.subplots import make_subplots as msp
 from streamlit_option_menu import option_menu
 from pathlib import Path  
 import warnings
