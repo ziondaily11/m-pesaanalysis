@@ -294,6 +294,7 @@ def show_home():
     )
 
     fraud_region.update_layout(
+        title_font_color= "#F4170B",
         height= 300,
         showlegend= False,
         margin= dict(t= 40, b= 10, l= 10, r= 10),
@@ -312,7 +313,7 @@ def show_home():
         labels= transaction_split.index,
         values= transaction_split.values,
         hole= 0.7,
-        title= "<b>Transaction Type Split</b>",
+        title= "<b>Transaction Type Split</b>",z
         textinfo= "label",
         textposition= "outside",
         marker_colors=["#1D9E75", "#BA7517", "#D85A30"]
