@@ -483,6 +483,6 @@ def show_home():
     
     with st.container(border= True):
         st.plotly_chart(fig)
-        st.caption("The yaxes have been zoomed in to improve visualisation")
+        st.caption("NOTE:The yaxes have been zoomed in to improve visualisation")
 
 show_home()
