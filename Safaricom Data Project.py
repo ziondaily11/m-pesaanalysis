@@ -352,7 +352,7 @@ def show_home():
 
     )
     amount_dist_bar.update_layout(
-        height= 230,
+        height= 250,
         margin= dict(t= 40, b= 10, l= 10, r= 10),
         title_font_color= "#618948",
         showlegend= False,
