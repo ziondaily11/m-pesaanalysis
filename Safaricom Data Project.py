@@ -371,7 +371,8 @@ def show_home():
             showgrid= False,
             title= None,
             tickformat= "~s"
-        )
+        ),
+        title_font_color= "#618948",
     )
     amount_dist_bar= px.bar(
         amount_dist,
