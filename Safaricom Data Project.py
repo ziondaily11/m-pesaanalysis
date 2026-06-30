@@ -360,7 +360,7 @@ def show_home():
         height= 200,
         margin= dict(t= 40, b= 10, l= 10, r= 10),
         xaxis= dict(
-            range= [4700, 5200]
+            range= [4700, 5200],
             showgrid= False,
             title= None
         ),
