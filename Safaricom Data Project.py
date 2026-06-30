@@ -318,6 +318,10 @@ def show_home():
         textposition= "outside",
         marker_colors=["#1D9E75", "#BA7517", "#D85A30"]
     ))
+    transaction_split_pie.update_traces(
+        outsidetextfont= dict(size= 12),
+        domain= dict(x=[0.1, 0.9], y=[0.1, 0.9])
+        )
     col, col1= st.columns(2)
     with col:
         with st.container(border= True):
