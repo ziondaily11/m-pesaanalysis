@@ -422,8 +422,8 @@ def show_home():
     
     fig.add_trace(trace, secondary_y=False)
     fraud_trace = go.Scatter(
-            x=fraud_rate_hour.index,
-            y=fraud_rate_hour.values,
+            x=fraud_rate_hour["hour"]
+            y=fraud_rate_hour["is_fraud"]
             name="Fraud Rate",
             mode="lines",
             line=dict(
