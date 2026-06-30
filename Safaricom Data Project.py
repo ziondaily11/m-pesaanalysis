@@ -331,7 +331,7 @@ def show_home():
                 font= dict(color= "#618948")
                 ),
         
-        height= 260,
+        height= 280,
         margin= dict(t= 40, b= 10, l= 10, r= 10),
         annotations= [dict(
             text= "120,000 txns",
