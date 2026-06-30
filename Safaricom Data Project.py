@@ -429,7 +429,7 @@ def show_home():
         legend= dict(
             orientation= "h",
             y= 1.08, x= 0.5, 
-            xachor= "center"
+            xanchor= "center"
         ),
         margin=  dict(t= 40, b= 10, l= 10, r= 10),
         height= 300
