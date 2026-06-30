@@ -320,14 +320,14 @@ def show_home():
         marker_colors=["#1D9E75", "#BA7517", "#D85A30"]
     ))
     transaction_split_pie.update_traces(
-        outsidetextfont= dict(size= 12),
         domain= dict(x=[0.1, 0.9], y=[0.1, 0.9])
         )
     transaction_split_pie.update_layout(
         title= dict(
                 text= "<b>Transaction Type Split</b>",
                 x= 0,
-                y= 0.97
+                y= 0.97,
+                font= dict(color= "#76A758")
                 ),
         
         height= 230,
