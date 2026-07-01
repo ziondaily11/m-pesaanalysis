@@ -421,72 +421,71 @@ def show_home():
 
     #fraude rate per hour + transaction amount per hour
 
-    fig= msp(specs= [[{"secondary_y": True}]])
+    # Scale fraud rate into the transaction axis range so tonexty can work
+    min_t, max_t = tran_per_hour.min(), tran_per_hour.max()
+    min_f, max_f = fraud_rate_hour["is_fraud"].min(), fraud_rate_hour["is_fraud"].max()
+
+    fraud_scaled = min_t + (fraud_rate_hour["is_fraud"] - min_f) * (max_t - min_t) / (max_f - min_f)
+
+    fig = msp(specs=[[{"secondary_y": True}]])
+
     trace = go.Scatter(
-            x=tran_per_hour.index,
-            y=tran_per_hour.values,
-            name="Transactions",
-            mode="lines",
-            fill="tozeroy",
-            line=dict(
-                shape="spline",
-                width=3,
-                color="#18c29c"
-            ),
-            marker=dict(size=7),
-            hovertemplate="<b>Hour %{x}:00</b><br>Transactions: %{y}<extra></extra>"
-        )
-    
+        x=tran_per_hour.index,
+        y=tran_per_hour.values,
+        name="Transactions",
+        mode="lines",
+        fill="tozeroy",
+        line=dict(shape="spline", width=3, color="#18c29c"),
+        marker=dict(size=7),
+        hovertemplate="<b>Hour %{x}:00</b><br>Transactions: %{y}<extra></extra>"
+    )
     fig.add_trace(trace, secondary_y=False)
+
     fraud_trace = go.Scatter(
-            x=fraud_rate_hour["hour"],
-            y=fraud_rate_hour["is_fraud"],
-            name="Fraud Rate",
-            mode="lines",
-            line=dict(
-                shape="spline",
-                width=3,
-                color="#F8240C",
-                dash="dashdot"
-            ),
-            fill="tonexty", 
-            fillcolor= "rgba(255, 0, 0, 0.35)",                        
-            hovertemplate="<b>Hour %{x}:00</b><br>Fraud Rate: %{y:.2f}%<extra></extra>"
-        )
+        x=fraud_rate_hour["hour"],
+        y=fraud_scaled,                      # ← use scaled values, not raw %
+        name="Fraud Rate",
+        mode="lines",
+        line=dict(shape="spline", width=3, color="#F8240C", dash="dashdot"),
+        fill="tonexty",
+        fillcolor="rgba(255, 0, 0, 0.35)",
+        customdata=fraud_rate_hour["is_fraud"],  # keep real % for hover
+        hovertemplate="<b>Hour %{x}:00</b><br>Fraud Rate: %{customdata:.2f}%<extra></extra>",
+    )
+    fig.add_trace(fraud_trace, secondary_y=False)   # ← FALSE, same axis as transactions
 
-    fig.add_trace(fraud_trace, secondary_y=True)
     fig.update_layout(
-        title= "Transactions VS Fraude Rate by Hour",
-        title_font= dict(color= "#618948"),
-        template= "plotly_dark",
-        hovermode= "x unified",
+        title="Transactions VS Fraude Rate by Hour",
+        title_font=dict(color="#618948"),
+        template="plotly_dark",
+        hovermode="x unified",
+        legend=dict(orientation="h", y=1.08, x=0.5, xanchor="center"),
+        margin=dict(t=40, b=10, l=10, r=10),
+        height=250,
+    )
 
-        legend= dict(
-            orientation= "h",
-            y= 1.08, x= 0.5, 
-            xanchor= "center"
-        ),
-        margin=  dict(t= 40, b= 10, l= 10, r= 10),
-        height= 250
-    )
     fig.update_yaxes(
-        title= "Transaction AMT",
-        title_font_color= "#18c29c",
-        range= [4700, 5200],
-        tickformat= "~s",
-        secondary_y= False
+        title="Transaction AMT",
+        title_font_color="#18c29c",
+        range=[4700, 5200],
+        tickformat="~s",
+        secondary_y=False,
     )
+
+    # Invisible secondary axis JUST for the % labels — no trace attached
     fig.update_yaxes(
-        title= "Fraud Rate",
-        title_font= dict(color= "#F8240C"),
-        ticksuffix= "%",
-        secondary_y= True
+        title="Fraud Rate",
+        title_font=dict(color="#F8240C"),
+        ticksuffix="%",
+        secondary_y=True,
+        range=[min_f - (min_f * 0.05), max_f + (max_f * 0.05)],  # roughly match real % range
+        overlaying="y",
+        showgrid=False,
     )
-    fig.update_xaxes(
-        ticksuffix= "h",
-        tickmode= "linear",
-        dtick= 2
-    )
+
+    fig.update_xaxes(ticksuffix="h", tickmode="linear", dtick=2)
+
+    
 
     col, col1, col_c= st.columns(3)
     with col:
