@@ -559,7 +559,7 @@ def show_home():
         y= "count",
         title= "Fraud Counts By Hour Of Day",
         color= "hour",
-        color_discrete_sequence=["#808080", "#808080", "#808080", "#FF4D4D", "#808080", "#808080", "#808080", "#808080", "#808080", "#808080", "#808080", "#808080", "#808080", "#808080", "#808080", "#808080", "#808080", "#808080", "#808080", "#808080", "#FF4D4D", "#808080", "#808080"],
+        color_discrete_sequence=["#808080"]
 )
     fraud_count_bar.update_layout(
         title_font= dict(color= "#BA7517"),
