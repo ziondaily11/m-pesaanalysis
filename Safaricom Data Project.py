@@ -103,7 +103,9 @@ def calc(saf_data):
         Trans_daily= (
             saf_data.groupby(
                by= ["day_of_week"]
-            )[["transaction_id"]].size().reset_index
+            )[["transaction_id"]].size()
+            .reset_index(name="count")
+            .rename(columns={"day_of_week": "day"})
         )
         Trans_daily.columns= ["day", "count"]
         return (
