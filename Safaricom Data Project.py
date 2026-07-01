@@ -485,20 +485,25 @@ def show_home():
         dtick= 1
     )
 
-    col, col1= st.columns(2)
+    col, col1, col_c= st.columns(3)
     with col:
         with st.container(border= True):
-            st.plotly_chart(fraud_rate_bar)
-            st.plotly_chart(transaction_split_pie)
+            st.plotly_chart(amount_dist_bar)
+            
     with col1:
         with st.container(border= True):
+             st.plotly_chart(transaction_split_pie)
+            
+    with col_c:
+        with st.container(border= True)
+            st.plotly_chart(fraud_rate_bar)
+    bar_col, area_col= st.columns(0.5, 2.5)
+    with bar_col:
+        with st.container(border= True):
             st.plotly_chart(fraud_region)
-            st.caption("Note: y-axis starts at 2.7% to highlight regional differences")
-            st.plotly_chart(amount_dist_bar)
-    
-    
-    with st.container(border= True):
-        st.plotly_chart(fig)
-        st.caption("NOTE:The yaxes have been zoomed in to improve visualisation")
+    with area_col:
+        with st.container(border= True):
+            st.plotly_chart(fig)
+            
 
 show_home()
