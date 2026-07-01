@@ -212,7 +212,7 @@ def show_home():
         }
         </style>
         """, unsafe_allow_html=True)
-    col1, col2 = st.columns([2, 8], vertical_alignment= "center")
+    col1, col2 = st.columns([2, 8], vertical_alignment= "center", gap="small")
     lef, mid_lef, mid, mid_righ, rig, col = st.columns(6)
     with col1:
         st.image(Path(__file__).parent /"projectlogo.png", width= 140)
