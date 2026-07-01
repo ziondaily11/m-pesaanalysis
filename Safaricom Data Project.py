@@ -287,7 +287,7 @@ def show_home():
     fraud_rate_bar.update_traces(width= 0.4)
 
     fraud_rate_bar.update_layout(
-        height= 300,
+        height= 250,
         showlegend= False,
         title_font_color= "#F4170B",
         margin= dict(t= 40, b= 10, l= 10, r= 10),
@@ -313,7 +313,7 @@ def show_home():
     fraud_region.update_traces(width= 0.4)
     fraud_region.update_layout(
         title_font_color= "#F4170B",
-        height= 290,
+        height= 250,
         showlegend= False,
         margin= dict(t= 40, b= 10, l= 10, r= 10),
         xaxis= dict(
@@ -350,7 +350,7 @@ def show_home():
                 font= dict(color= "#618948")
                 ),
         
-        height= 280,
+        height= 250,
         margin= dict(t= 40, b= 10, l= 10, r= 10),
         annotations= [dict(
             text= "120,000 txns",
@@ -404,7 +404,7 @@ def show_home():
     )
     amount_dist_bar.update_traces(width= 0.4)
     amount_dist_bar.update_layout(
-        height= 260,
+        height= 250,
         margin= dict(t= 40, b= 10, l= 10, r= 10),
         title_font_color= "#618948",
         showlegend= False,
@@ -464,7 +464,7 @@ def show_home():
             xanchor= "center"
         ),
         margin=  dict(t= 40, b= 10, l= 10, r= 10),
-        height= 300
+        height= 250
     )
     fig.update_yaxes(
         title= "Transaction AMT",
