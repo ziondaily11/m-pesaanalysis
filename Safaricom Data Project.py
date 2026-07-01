@@ -26,7 +26,7 @@ st.set_page_config(
 def data_store():
    saf_data= pd.read_csv(Path(__file__).parent / "mpesa_synthetic.csv")
    return saf_data
-@st.cache_data
+@st.cache_data(ttl= 90)
 def calc(saf_data):
         saf_data= data_store()
         saf_data= saf_data.dropna(subset= "transaction_id")
@@ -118,6 +118,7 @@ def calc(saf_data):
             fraud_rate_region,
             fraud_rate_hour
         )
+st.cache_data(ttl=90)
 def show_home():
     st.markdown("""
     <style>
