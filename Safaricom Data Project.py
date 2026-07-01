@@ -449,7 +449,7 @@ def show_home():
                 dash="dashdot"
             ),
             fill="tozeroy",                         
-            fillcolor="rgba(255, 0, 0, 0.15)"
+            fillcolor="rgba(255, 0, 0, 0.15)",
             hovertemplate="<b>Hour %{x}:00</b><br>Fraud Rate: %{y:.2f}%<extra></extra>"
         )
 
