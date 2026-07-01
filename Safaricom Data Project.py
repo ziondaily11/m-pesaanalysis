@@ -214,7 +214,7 @@ def show_home():
         </style>
         """, unsafe_allow_html=True)
     
-    lef, mid_lef, mid, mid_righ, rig, col = st.columns(6)
+    
     with st.container(border= True):
             col1, col2 = st.columns([0.3, 2.7], vertical_alignment= "center", gap="small")
             with col1:
@@ -226,7 +226,7 @@ def show_home():
                             FINPULSE REPORT
                         </h1>
                     """, unsafe_allow_html=True)
-
+    lef, mid_lef, mid, mid_righ, rig, col = st.columns(6)
     with lef:
         st.metric(label= "Total Transactions", 
         value= f"{total_transactions:,}",
