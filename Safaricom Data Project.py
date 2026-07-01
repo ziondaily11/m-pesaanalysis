@@ -527,7 +527,7 @@ def show_home():
     )
 
     #daily transaction count bar
-    trans_daily_bar(
+    trans_daily_bar=px.bar(
         Trans_daily,
         x= "day",
         y="count",
