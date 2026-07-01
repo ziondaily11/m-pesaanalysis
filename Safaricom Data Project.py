@@ -597,13 +597,13 @@ def show_home():
         with st.container(border= True):
             st.plotly_chart(fig)
     st.info("📱 Device split insight: Feature phones and smartphones are almost exactly 50/50 (50.3% vs 49.7%) across all regions — showing M-Pesa's penetration across all economic levels. Nakuru has the highest smartphone fraud rate at 3.12%, while Kisumu feature phones are the lowest at 2.68%.")
-    bar_col1,  bar_col3= st.columns([5,  23])
-    with bar_col1:
-        with st.container(border= True):
-            st.plotly_chart(phone_dist_bar)   
-    #with bar_col2:
+    bar_col2,  bar_col3= st.columns([0.8,  2.3])
+    #with bar_col1:
         #with st.container(border= True):
-            #st.plotly_chart(trans_daily_bar)
+            #st.plotly_chart(phone_dist_bar)   
+    with bar_col2:
+        with st.container(border= True):
+            st.plotly_chart(trans_daily_bar)
     with bar_col3:
         with st.container(border= True):
             st.plotly_chart(fraud_count_bar)
