@@ -454,7 +454,7 @@ def show_home():
 
     fig.add_trace(fraud_trace, secondary_y=True)
     fig.update_layout(
-        title= "Transactions VS Fraude Rate by Hour",
+        title= "Transactions V Fraude Rate by Hour",
         title_font= dict(color= "#618948"),
         template= "plotly_dark",
         hovermode= "x unified",
@@ -468,7 +468,7 @@ def show_home():
         height= 250
     )
     fig.update_yaxes(
-        title= "Transaction AMT",
+        title= "Transactions",
         title_font_color= "#18c29c",
         range= [4700, 5200],
         tickformat= "~s",
@@ -507,6 +507,7 @@ def show_home():
     with area_col:
         with st.container(border= True):
             st.plotly_chart(fig)
+    st.info("📱 Device split insight: Feature phones and smartphones are almost exactly 50/50 (50.3% vs 49.7%) across all regions — showing M-Pesa's penetration across all economic levels. Nakuru has the highest smartphone fraud rate at 3.12%, while Kisumu feature phones are the lowest at 2.68%.")
             
 
 show_home()
