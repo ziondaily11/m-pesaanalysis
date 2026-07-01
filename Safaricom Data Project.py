@@ -18,7 +18,7 @@ sys.modules['warnings'] = warnings
 
 
 st.set_page_config(
-    page_title= "m-pesa Analysis",
+    page_title= "FinPulseAnalysis",
     page_icon= ":bar_chart:",
     layout= "wide"
 )
