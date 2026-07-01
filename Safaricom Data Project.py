@@ -219,6 +219,7 @@ def show_home():
     col1, col2 = st.columns([0.3, 2.7], vertical_alignment= "center", gap="small")
     with col1:
         st.image(Path(__file__).parent / "projectlogo.png", width=140)
+    st.markdown("<div style='margin-left: 0px;'></div>", unsafe_allow_html=True)
     with col2:
         st.markdown("""
             <h1 style="color: #9E1405; font-family: Courier New, monospace;
@@ -233,7 +234,7 @@ def show_home():
                         }
                     </style>
                 """, unsafe_allow_html=True)
-    st.markdown("<div style='margin-bottom: 20px;'></div>", unsafe_allow_html=True)
+    st.markdown("<div style='margin-top: 20px;'></div>", unsafe_allow_html=True)
     lef, mid_lef, mid, mid_righ, rig, col = st.columns(6)
     with lef:
         st.metric(label= "Total Transactions", 
