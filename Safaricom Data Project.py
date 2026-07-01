@@ -604,7 +604,7 @@ def show_home():
     #with bar_col2:
         #with st.container(border= True):
             #st.plotly_chart(trans_daily_bar)
-    with bar_col2:
+    with bar_col3:
         with st.container(border= True):
             st.plotly_chart(fraud_count_bar)
 
