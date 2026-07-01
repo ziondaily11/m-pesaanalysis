@@ -495,7 +495,7 @@ def show_home():
              st.plotly_chart(transaction_split_pie)
             
     with col_c:
-        with st.container(border= True)
+        with st.container(border= True):
             st.plotly_chart(fraud_rate_bar)
     bar_col, area_col= st.columns(0.5, 2.5)
     with bar_col:
