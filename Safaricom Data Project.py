@@ -233,7 +233,7 @@ def show_home():
                                 }
                             </style>
                         """, unsafe_allow_html=True)
-    st.markdown("<div style='margin-top: 20px;'></div>", unsafe_allow_html=True)
+    st.markdown("<div style='margin-bottom: 20px;'></div>", unsafe_allow_html=True)
     lef, mid_lef, mid, mid_righ, rig, col = st.columns(6)
     with lef:
         st.metric(label= "Total Transactions", 
