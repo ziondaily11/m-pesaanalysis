@@ -299,7 +299,7 @@ def show_home():
             title= None,
             showgrid= False
         ),
-        bargap= 0.3
+        bargap= 0.2
     )
     fraud_region= px.bar(
         fraud_rate_region,
@@ -325,7 +325,7 @@ def show_home():
             ticksuffix= "%",
             title= None
         ),
-        bargap= 0.3
+        bargap= 0.1
     )
     #transaction split pie
     label_with_count= [
@@ -415,7 +415,7 @@ def show_home():
             title= None,
             showgrid= False
         ),
-        bargap= 0.3
+        bargap= 0.1
     )
 
     #fraude rate per hour + transaction amount per hour
@@ -496,11 +496,13 @@ def show_home():
             
     with col_c:
         with st.container(border= True):
-            st.plotly_chart(fraud_rate_bar)
+            st.plotly_chart(fraud_region)
+            
     bar_col, area_col= st.columns([0.5, 2.5])
     with bar_col:
         with st.container(border= True):
-            st.plotly_chart(fraud_region)
+            st.plotly_chart(fraud_rate_bar)
+
     with area_col:
         with st.container(border= True):
             st.plotly_chart(fig)
