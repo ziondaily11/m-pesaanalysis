@@ -552,15 +552,14 @@ def show_home():
         )
     )
     #FRAUD hourly counts bar 
-    colors = {"#E24B4A" if hour in [4, 21] else "#888780" for hour in range(24)
-                 for hour in fraud_hourly_counts["hour"]}
+    
     fraud_count_bar= px.bar(
         fraud_hourly_counts,
         x= "hour",
         y= "count",
         title= "Fraud Counts By Hour Of Day",
         color= "hour",
-        color_discrete_map=["#808080", "#808080", "#808080", "#FF4D4D", "#808080", "#808080", "#808080", "#808080", "#808080", "#808080", "#808080", "#808080", "#808080", "#808080", "#808080", "#808080", "#808080", "#808080", "#808080", "#808080", "#FF4D4D", "#808080", "#808080"],
+        color_discrete_sequence=["#808080", "#808080", "#808080", "#FF4D4D", "#808080", "#808080", "#808080", "#808080", "#808080", "#808080", "#808080", "#808080", "#808080", "#808080", "#808080", "#808080", "#808080", "#808080", "#808080", "#808080", "#FF4D4D", "#808080", "#808080"],
 )
     fraud_count_bar.update_layout(
         title_font= dict(color= "#BA7517"),
