@@ -497,8 +497,8 @@ def show_home():
         phone_dist,
         x= "region",
         y= "count",
-        color= "device_type"
-        color_discrete_sequence=["#BA7517", "#D85A30"]
+        color="device_type",
+        color_discrete_sequence=["#BA7517", "#D85A30"],
         barmode= "stack"
     )
 
