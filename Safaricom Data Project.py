@@ -99,6 +99,13 @@ def calc(saf_data):
         .size()
         .reset_index(name= "count")
         )
+        #Transaction volume by day of the weak
+        Trans_daily= (
+            saf_data.groupby(
+               by= ["day_of_week"]
+            )[["transaction_id"]].size().reset_index
+        )
+        Trans_daily.columns= ["day", "count"]
         return (
             total_transactions,
             total_volume,
@@ -122,7 +129,8 @@ def calc(saf_data):
             amount_dist,
             fraud_rate_region,
             fraud_rate_hour,
-            phone_dist
+            phone_dist,
+            Trans_daily
         )
 st.cache_data(ttl=90)
 def show_home():
@@ -183,7 +191,8 @@ def show_home():
             amount_dist,
             fraud_rate_region,
             fraud_rate_hour,
-            phone_dist
+            phone_dist,
+            Trans_daily
         )= calc(saf_data)
     def format_number(num):
         if num >= 1_000_000_000:
@@ -513,6 +522,15 @@ def show_home():
             title= None,
             showgrid= False
         )
+    )
+
+    #daily transaction count bar
+    trans_daily_bar(
+        Trans_daily,
+        x= "day",
+        y="count",
+        title= "Transaction Volume By Day"
+        
     )
 
     col, col1, col_c= st.columns(3)
