@@ -215,14 +215,8 @@ def show_home():
     col1, col2 = st.columns([2, 8], vertical_alignment= "center")
     lef, mid_lef, mid, mid_righ, rig, col = st.columns(6)
     with col1:
-        st.image(Path(__file__).parent /"projectlogo.png")
-    with col2:
-        st.markdown("""
-                <h1 style="color: #288C1D; font-family: Courier New, monospace; 
-                        font-size:30px">
-                    FINPULSE
-                </h1>
-            """, unsafe_allow_html=True)
+        st.image(Path(__file__).parent /"projectlogo.png", caption= "FINPLUSE", width= 100)
+    
     with lef:
         st.metric(label= "Total Transactions", 
         value= f"{total_transactions:,}",
@@ -253,7 +247,7 @@ def show_home():
          delta= f"Hour {peak_hour}--{peak_hour_counts} cases",
          delta_color= "inverse")
     with st.container(border= True):
-        st.write(
+        st.info(
           "🔍 Biggest finding: Fraudulent transactions are on average 72% larger than legitimate ones (KES 2,535 vs KES 1,476). And for transactions above KES 5,000, the fraud rate shoots to 9.65% — nearly 1 in 10. Kenyans sending big money are the primary target."  
         )
     st.markdown("-")
