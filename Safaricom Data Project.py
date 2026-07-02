@@ -282,7 +282,7 @@ def show_home():
         return 
     (
             total_transactions_f, total_volume_f, transaction_split_f, tran_per_hour_f,
-            transaction_split_f, fraud_amt_f, fraud_avg_f, fraud_count_f, fraud_hourly_counts_f,
+            fraud_amt_f, fraud_avg_f, fraud_count_f, fraud_hourly_counts_f,
             fraud_rate_f, fraud_rate_per_amount_f, feature_count_f, feature_pct_f,
             smart_count_f, smart_pct_f, legit_amt_f, legit_avg_f, peak_hour_f, peak_hour_counts_f,
             amount_dist_f, fraud_rate_region_f, fraud_rate_hour_f, phone_dist_f, Trans_daily_f
