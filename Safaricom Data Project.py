@@ -266,13 +266,7 @@ def show_home():
             options=["All", "Fraud only", "Legit only"]
         )
     filtered_data = saf_data.copy()
-    (
-            total_transactions_f, total_volume_f, transaction_split_f, tran_per_hour_f,
-            transaction_split_f, fraud_amt_f, fraud_avg_f, fraud_count_f, fraud_hourly_counts_f,
-            fraud_rate_f, fraud_rate_per_amount_f, feature_count_f, feature_pct_f,
-            smart_count_f, smart_pct_f, legit_amt_f, legit_avg_f, peak_hour_f, peak_hour_counts_f,
-            amount_dist_f, fraud_rate_region_f, fraud_rate_hour_f, phone_dist_f, Trans_daily_f
-    ) = calc(filtered_data)
+    
     if region_filter:
         filtered_data = filtered_data[filtered_data["region"].isin(region_filter)]
 
@@ -287,6 +281,13 @@ def show_home():
     if filtered_data.empty:
         st.warning("No transactions match the selected filters. Try widening your selection.")
         return 
+    (
+            total_transactions_f, total_volume_f, transaction_split_f, tran_per_hour_f,
+            transaction_split_f, fraud_amt_f, fraud_avg_f, fraud_count_f, fraud_hourly_counts_f,
+            fraud_rate_f, fraud_rate_per_amount_f, feature_count_f, feature_pct_f,
+            smart_count_f, smart_pct_f, legit_amt_f, legit_avg_f, peak_hour_f, peak_hour_counts_f,
+            amount_dist_f, fraud_rate_region_f, fraud_rate_hour_f, phone_dist_f, Trans_daily_f
+    ) = calc(filtered_data)
     st.markdown("""
                     <style>
                         div[data-testid="stVerticalBlock"]:has(div.st-key-logo_header) div[data-testid="stHorizontalBlock"] {
