@@ -614,7 +614,7 @@ def show_home():
         x= "hour",
         y= "count",
         title= "Fraud Counts By Hour Of Day",
-        color= fraud_hourly_counts["hour"].astype(str),
+        color= fraud_hourly_counts_f["hour"].astype(str),
         color_discrete_map= colors
 )
     fraud_count_bar.update_layout(
