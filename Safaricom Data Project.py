@@ -197,6 +197,13 @@ def show_home():
             phone_dist,
             Trans_daily
         )= calc(saf_data)
+    (
+            total_transactions_f, total_volume_f, transaction_split_f, tran_per_hour_f,
+            transaction_split_f, fraud_amt_f, fraud_avg_f, fraud_count_f, fraud_hourly_counts_f,
+            fraud_rate_f, fraud_rate_per_amount_f, feature_count_f, feature_pct_f,
+            smart_count_f, smart_pct_f, legit_amt_f, legit_avg_f, peak_hour_f, peak_hour_counts_f,
+            amount_dist_f, fraud_rate_region_f, fraud_rate_hour_f, phone_dist_f, Trans_daily_f
+    ) = calc(filtered_data)
     def format_number(num):
         if num >= 1_000_000_000:
             return f"{num/1_000_000_000:.1f}B"
@@ -292,32 +299,32 @@ def show_home():
     lef, mid_lef, mid, mid_righ, rig, col = st.columns(6)
     with lef:
         st.metric(label= "Total Transactions", 
-        value= f"{total_transactions:,}",
+        value= f"{total_transactions_f:,}",
         delta= "full 2026 dataset",
         delta_color= "off")
     with mid_lef:
         st.metric(label= "Total Volume", 
-        value= f"KES {format_number(total_volume)}",
+        value= f"KES {format_number(total_volume_f)}",
         delta= "Across all types",
         delta_color= "off")
     with mid:
-        st.metric(label="Fraud Rate", value=f"{fraud_rate}%",
-        delta= f"{fraud_count} flagged txns",
+        st.metric(label="Fraud Rate", value=f"{fraud_rate_f}%",
+        delta= f"{fraud_count_f} flagged txns",
         delta_color= "inverse")
     with mid_righ:
         st.metric(label= "Avg. legitimate Amount",
-        value= (f"KES {round(legit_avg):,}"),
+        value= (f"KES {round(legit_avg_f):,}"),
         delta= "per transaction")
     with rig:
        st.metric(label= "Avg. Fraud Amount", 
-       value= (f"KES {round(fraud_avg):,}"),
-       delta= f"{round(fraud_avg/legit_avg, 2)}x larger than legit",
+       value= (f"KES {round(fraud_avg_f):,}"),
+       delta= f"{round(fraud_avg_f/legit_avg_f, 2)}x larger than legit",
         delta_color= "inverse"
        )
     with col:
         st.metric(label= "Peak Fraud Hour",
          value= f"{peak_hour-12} PM",
-         delta= f"Hour {peak_hour}--{peak_hour_counts} cases",
+         delta= f"Hour {peak_hour_f}--{peak_hour_counts_f} cases",
          delta_color= "inverse")
     
     st.info(
