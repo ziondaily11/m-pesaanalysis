@@ -250,14 +250,14 @@ def show_home():
     with col_region:
         region_filter = st.multiselect(
             "Region",
-            options=sorted(df["region"].unique()),
+            options=sorted(saf_data["region"].unique()),
             default=[]  
             )
 
     with col_type:
         type_filter = st.multiselect(
             "Transaction Type",
-            options=sorted(df["transaction_type"].unique()),
+            options=sorted(saf_data["transaction_type"].unique()),
             default=[]
         )
 
