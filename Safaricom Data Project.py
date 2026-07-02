@@ -313,7 +313,7 @@ def show_home():
         delta= "Across all types",
         delta_color= "off")
     with mid:
-        st.metric(label="Fraud Rate", value=f"{fraud_rate_f}%",
+        st.metric(label="Fraud Rate", value=f"{round(fraud_rate_f, 2)}%",
         delta= f"{fraud_count_f} flagged txns",
         delta_color= "inverse")
     with mid_righ:
@@ -328,7 +328,7 @@ def show_home():
        )
     with col:
         st.metric(label= "Peak Fraud Hour",
-         value= f"{peak_hour-12} PM",
+         value= f"{peak_hour_f-12} PM",
          delta= f"Hour {peak_hour_f}--{peak_hour_counts_f} cases",
          delta_color= "inverse")
     
