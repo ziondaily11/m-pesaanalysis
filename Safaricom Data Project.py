@@ -264,20 +264,23 @@ def show_home():
         region_filter = st.multiselect(
             "Region",
             options=sorted(saf_data["region"].unique()),
-            default=[]  
+            default=[],
+            placeholder="Choose Region" 
             )
 
     with col_type:
         type_filter = st.multiselect(
             "Transaction Type",
             options=sorted(saf_data["transaction_type"].unique()),
-            default=[]
+            default=[],
+            placeholder="Choose Trxn Type"
         )
 
     with col_fraud:
         fraud_filter = st.selectbox(
             "Fraud Status",
-            options=["All", "Fraud only", "Legit only"]
+            options=["All", "Fraud only", "Legit only"],
+            placeholder="Choose Fraud Status"
         )
     filtered_data = saf_data.copy()
     
@@ -533,7 +536,7 @@ def show_home():
 
     fig.add_trace(fraud_trace, secondary_y=True)
     fig.update_layout(
-        title= "Transactions V Fraude Rate by Hour",
+        title= "Transactions V Fraud Rate by Hour",
         title_font= dict(color= "#618948"),
         template= "plotly_dark",
         hovermode= "x unified",
@@ -661,7 +664,7 @@ def show_home():
     with area_col:
         with st.container(border= True):
             st.plotly_chart(fig)
-    st.info("📱 Device split insight: Feature phones and smartphones are almost exactly 50/50 (50.3% vs 49.7%) across all regions — showing M-Pesa's penetration across all economic levels. Nakuru has the highest smartphone fraud rate at 3.12%, while Kisumu feature phones are the lowest at 2.68%.")
+    st.info("📱 Device split insight: Feature phones and smartphones are almost exactly 50/50 (50.3% vs 49.7%) across all regions — showing Mobile penetration across all economic levels. Nakuru has the highest smartphone fraud rate at 3.12%, while Kisumu feature phones are the lowest at 2.68%.")
     st.markdown("<div style='margin-top: 20px;'></div>", unsafe_allow_html=True)  
     bar_col2,  bar_col3= st.columns([2, 3])
 
