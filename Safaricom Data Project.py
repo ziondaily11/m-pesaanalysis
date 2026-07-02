@@ -266,6 +266,22 @@ def show_home():
             "Fraud Status",
             options=["All", "Fraud only", "Legit only"]
         )
+    filtered_data = saf_data.copy()
+
+    if region_filter:
+        filtered_data = filtered_data[filtered_data["region"].isin(region_filter)]
+
+    if type_filter:
+        filtered_data = filtered_data[filtered_data["transaction_type"].isin(type_filter)]
+
+    if fraud_filter == "Fraud only":
+        filtered_data = filtered_data[filtered_data["is_fraud"] == 1]
+    elif fraud_filter == "Legit only":
+        filtered_data = filtered_data[filtered_data["is_fraud"] == 0]
+
+    if filtered_data.empty:
+        st.warning("No transactions match the selected filters. Try widening your selection.")
+        return 
     st.markdown("""
                     <style>
                         div[data-testid="stVerticalBlock"]:has(div.st-key-logo_header) div[data-testid="stHorizontalBlock"] {
