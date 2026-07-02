@@ -339,11 +339,11 @@ def show_home():
        "cat4": "#E24B4A",      
        "cat5": "#791F1F"}
     fraud_rate_bar= px.bar(
-         fraud_rate_per_amount,
-        x= fraud_rate_per_amount.index,
-        y= fraud_rate_per_amount.values,
+         fraud_rate_per_amount_f,
+        x= fraud_rate_per_amount_f.index,
+        y= fraud_rate_per_amount_f.values,
         title= "<b>Fraud rate by transaction amount</b>",
-        color=fraud_rate_per_amount.index,
+        color=fraud_rate_per_amount_f.index,
         color_discrete_sequence=["#1D9E75", "#BA7517", "#D85A30", "#E24B4A", "#791F1F"]
     )
     #fraud_rate_bar.update_traces(width= 0.45)
@@ -456,11 +456,11 @@ def show_home():
         title_font_color= "#618948",
     )
     amount_dist_bar= px.bar(
-        amount_dist,
-        x= amount_dist.index,
-        y= amount_dist.values,
+        amount_dist_f,
+        x= amount_dist_f.index,
+        y= amount_dist_f.values,
         title= "Amount Distribution",
-        color= amount_dist.index,
+        color= amount_dist_f.index,
         color_discrete_sequence=["#1D9E75", "#BA7517", "#D85A30", "#E24B4A", "#791F1F"]
 
     )
